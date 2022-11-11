@@ -16,3 +16,14 @@ export const Container = styled.div`
     text-align: center;
   }
 `
+
+export const FormStyled = styled.div`
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
+
+export const ButtonContainer = styled.div`
+  height: 50px;
+`

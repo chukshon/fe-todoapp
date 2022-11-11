@@ -13,11 +13,11 @@ export const InputContainer = styled.div`
   position: relative;
   span {
     position: absolute;
-    top: 10px;
+    top: 15px;
     left: 15px;
   }
   input {
-    height: 40px;
+    height: 50px;
     outline: none;
     border-radius: 3px;
     border: 2px solid #ccc;
@@ -30,7 +30,7 @@ export const InputContainer = styled.div`
       }
     }
     &:focus {
-      border-color: #8e49e8;
+      border-color: #721ce3;
     }
     &:hover {
       border-color: #8e49e8;

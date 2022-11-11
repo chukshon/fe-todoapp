@@ -1,16 +1,27 @@
 import React from "react"
-import { LoginInputField } from "../../components"
-import { LoginWrapper, Container } from "./style"
+import { LoginInputField, Button } from "../../components"
+import { LoginWrapper, Container, FormStyled, ButtonContainer } from "./style"
 
 const Login = () => {
   return (
     <LoginWrapper>
       <Container>
         <h1>Rapptr Labs</h1>
-        <form>
-          <LoginInputField inputType="email" />
-          <LoginInputField inputType="email" />
-        </form>
+        <FormStyled>
+          <LoginInputField
+            type="email"
+            label="Email"
+            placeholder="user@rapptrlabs.com"
+          />
+          <LoginInputField
+            type="password"
+            label="Password"
+            placeholder="Must be at least 4 characters"
+          />
+          <ButtonContainer>
+            <Button />
+          </ButtonContainer>
+        </FormStyled>
       </Container>
     </LoginWrapper>
   )
