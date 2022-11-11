@@ -19,6 +19,7 @@ const LoginInputField = ({ type, label, placeholder }: Props) => {
           // className="error"
         />
       </InputContainer>
+      {/* <p>Email should be no more than 50 characters</p> */}
     </InputRowStyled>
   )
 }
