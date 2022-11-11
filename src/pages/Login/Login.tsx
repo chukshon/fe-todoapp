@@ -33,7 +33,7 @@ const Login = () => {
             touched={LoginFormik.touched.password}
           />
           <ButtonContainer>
-            <Button />
+            <Button disabled={!LoginFormik.isValid} buttonText="Login" />
           </ButtonContainer>
         </FormStyled>
       </Container>

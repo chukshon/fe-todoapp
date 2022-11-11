@@ -16,7 +16,7 @@ export const ButtonStyled = styled.button`
     background: #721ce3;
   }
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
   }
