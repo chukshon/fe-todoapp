@@ -1,7 +1,19 @@
-import React from "react";
+import React from "react"
+import { LoginInputField } from "../../components"
+import { LoginWrapper, Container } from "./style"
 
 const Login = () => {
-  return <div>Login</div>;
-};
+  return (
+    <LoginWrapper>
+      <Container>
+        <h1>Rapptr Labs</h1>
+        <form>
+          <LoginInputField inputType="email" />
+          <LoginInputField inputType="email" />
+        </form>
+      </Container>
+    </LoginWrapper>
+  )
+}
 
-export default Login;
+export default Login
