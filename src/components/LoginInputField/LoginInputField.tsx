@@ -5,21 +5,40 @@ export type Props = {
   type: "text" | "password" | "email"
   label: string
   placeholder: string
+  handleChange: (e: any) => void
+  value: string
+  name: string
+  error: string | undefined
+  touched: boolean | undefined
+  onBlur: (e: any) => void
 }
 
-const LoginInputField = ({ type, label, placeholder }: Props) => {
+const LoginInputField = ({
+  type,
+  label,
+  placeholder,
+  handleChange,
+  value,
+  name,
+  error,
+  touched,
+  onBlur,
+}: Props) => {
   return (
     <InputRowStyled>
-      <label htmlFor="email">{label}</label>
+      <label htmlFor={name}>{label}</label>
       <InputContainer>
         <span>{type !== "password" ? <FaUserAlt /> : <FaLock />}</span>
         <input
+          name={name}
           type={type}
           placeholder={placeholder}
-          // className="error"
+          onChange={handleChange}
+          value={value}
+          className={error && "error"}
         />
       </InputContainer>
-      {/* <p>Email should be no more than 50 characters</p> */}
+      {error && touched && <p>{error}</p>}
     </InputRowStyled>
   )
 }

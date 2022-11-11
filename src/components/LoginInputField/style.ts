@@ -3,9 +3,11 @@ import styled from "styled-components"
 export const InputRowStyled = styled.div`
   display: flex;
   flex-direction: column;
-
   label {
     margin-left: 10px;
+  }
+  p {
+    color: red;
   }
 `
 
@@ -24,9 +26,12 @@ export const InputContainer = styled.div`
     transition: all 0.3s ease;
     padding-left: 40px;
     &.error {
-      border: 2px solid #f89687;
+      border: 2px solid red;
       &:hover {
-        border: 2px solid #f89687;
+        border: 2px solid red;
+      }
+      &:focus {
+        border-color: red;
       }
     }
     &:focus {
