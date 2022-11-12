@@ -14,6 +14,12 @@ function useList() {
   const [isNewTodoActive, setIsNewTodoActive] = React.useState(false)
   const [newTodoValue, setNewTodoValue] = React.useState("")
 
+  const Save = (tempTodo: any) => {
+    setTodos(tempTodo)
+    setFilteredTodos(tempTodo)
+    localStorage.setItem("todo", JSON.stringify(tempTodo))
+  }
+
   const handleChangeNewTodo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     setNewTodoValue(value)
@@ -31,7 +37,6 @@ function useList() {
         return todo.name.toLowerCase().startsWith(searchValue.toLowerCase())
       })
     }
-
     setTodos(tempTodo)
   }
 
@@ -46,10 +51,7 @@ function useList() {
       isEditing: false,
     }
     const tempTodos = [...todos, newTodo]
-    setTodos(tempTodos)
-    localStorage.setItem("todo", JSON.stringify(tempTodos))
-
-    setFilteredTodos([...todos, newTodo])
+    Save(tempTodos)
     setIsNewTodoActive(false)
     setNewTodoValue("")
   }
@@ -61,9 +63,7 @@ function useList() {
       }
       return todo
     })
-    localStorage.setItem("todo", JSON.stringify(tempTodo))
-    setTodos(tempTodo)
-    setFilteredTodos(tempTodo)
+    Save(tempTodo)
   }
 
   const handleSaveEditedTodo = (id: string, value: string) => {
@@ -74,17 +74,14 @@ function useList() {
       }
       return todo
     })
-    setTodos(tempTodo)
-    setFilteredTodos(tempTodo)
-    localStorage.setItem("todo", JSON.stringify(tempTodo))
+    Save(tempTodo)
   }
 
   const handleDeleteTodo = (id: string) => {
     const tempTodo = [...todos].filter((todo) => {
       return todo.id !== id
     })
-    setTodos(tempTodo)
-    setFilteredTodos(tempTodo)
+    Save(tempTodo)
   }
 
   React.useEffect(() => {
