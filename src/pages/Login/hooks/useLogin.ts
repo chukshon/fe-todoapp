@@ -1,15 +1,20 @@
 import { useFormik } from "formik"
 import { LoginSchema } from "../../../schema"
 import { LoginT, FormikActionsT } from "../../../types"
+import { useAuthContext } from "../../../context/authContext"
 
 function useLogin() {
+  const { loginUser, message, showErrorAlert, isLoading } = useAuthContext()
   const LoginInitialState = {
     email: "",
     password: "",
   }
 
-  const handleSubmit = (vals: LoginT, actions: FormikActionsT) => {
-    actions.resetForm()
+  const handleSubmit = async (vals: LoginT, actions: FormikActionsT) => {
+    const response = await loginUser(vals)
+    if (response) {
+      actions.resetForm()
+    }
   }
   const LoginFormik = useFormik({
     initialValues: LoginInitialState,
@@ -19,6 +24,8 @@ function useLogin() {
   })
   return {
     LoginFormik,
+    message,
+    isLoading,
   }
 }
 

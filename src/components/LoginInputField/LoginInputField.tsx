@@ -35,7 +35,8 @@ const LoginInputField = ({
           placeholder={placeholder}
           onChange={handleChange}
           value={value}
-          className={error && "error"}
+          onBlur={onBlur}
+          className={error && touched ? "error" : ""}
         />
       </InputContainer>
       {error && touched && <p>{error}</p>}

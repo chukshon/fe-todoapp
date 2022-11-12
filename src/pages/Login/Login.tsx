@@ -4,7 +4,7 @@ import { LoginWrapper, Container, FormStyled, ButtonContainer } from "./style"
 import useLogin from "./hooks/useLogin"
 
 const Login = () => {
-  const { LoginFormik } = useLogin()
+  const { LoginFormik, message, isLoading } = useLogin()
   return (
     <LoginWrapper>
       <Container>
@@ -33,9 +33,13 @@ const Login = () => {
             touched={LoginFormik.touched.password}
           />
           <ButtonContainer>
-            <Button disabled={!LoginFormik.isValid} buttonText="Login" />
+            <Button
+              disabled={!LoginFormik.isValid || isLoading}
+              buttonText="Login"
+            />
           </ButtonContainer>
         </FormStyled>
+        <p>{message}</p>
       </Container>
     </LoginWrapper>
   )

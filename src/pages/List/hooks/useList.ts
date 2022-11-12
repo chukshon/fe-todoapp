@@ -34,7 +34,7 @@ function useList() {
     let tempTodo = [...filteredTodos]
     if (searchValue) {
       tempTodo = tempTodo.filter((todo) => {
-        return todo.name.toLowerCase().startsWith(searchValue.toLowerCase())
+        return todo.name.toLowerCase().includes(searchValue.toLowerCase())
       })
     }
     setTodos(tempTodo)

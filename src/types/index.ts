@@ -20,4 +20,5 @@ export type AuthInitialStateT = {
   isError: boolean
   message: string
   user: string | null
+  showErrorAlert: boolean
 }
