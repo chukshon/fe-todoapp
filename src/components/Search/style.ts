@@ -1,16 +1,5 @@
 import styled from "styled-components"
 
-export const InputRowStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  label {
-    margin-left: 10px;
-  }
-  p {
-    color: red;
-  }
-`
-
 export const InputContainer = styled.div`
   position: relative;
   span {

@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   background: #fff;
-  max-width: 400px;
+  max-width: 600px;
   width: 100%;
   margin: 120px auto;
   padding: 25px;
@@ -26,5 +26,8 @@ export const Container = styled.div`
   }
   .button_container {
     width: 20%;
+  }
+  .todo_list {
+    margin-top: 20px;
   }
 `

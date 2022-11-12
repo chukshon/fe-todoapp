@@ -1,6 +1,6 @@
-import { FormikState, useFormik } from "formik"
-import { LoginSchema } from "../../schema"
-import { LoginT } from "../../types"
+import { useFormik } from "formik"
+import { LoginSchema } from "../../../schema"
+import { LoginT, FormikActionsT } from "../../../types"
 
 function useLogin() {
   const LoginInitialState = {
@@ -8,8 +8,7 @@ function useLogin() {
     password: "",
   }
 
-  const handleSubmit = (vals: LoginT, actions: any) => {
-    alert("Yippie")
+  const handleSubmit = (vals: LoginT, actions: FormikActionsT) => {
     actions.resetForm()
   }
   const LoginFormik = useFormik({

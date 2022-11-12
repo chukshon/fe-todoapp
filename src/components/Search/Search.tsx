@@ -1,11 +1,11 @@
 import React from "react"
-import { InputRowStyled, InputContainer } from "./style"
+import { InputContainer } from "./style"
 import { AiOutlineSearch } from "react-icons/ai"
 
 export type Props = {
   type: "text" | "password" | "email"
   placeholder: string
-  handleChange?: (e: any) => void
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   value: string
   name: string
 }

@@ -5,7 +5,7 @@ export type Props = {
   type: "text" | "password" | "email"
   label: string
   placeholder: string
-  handleChange: (e: any) => void
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   value: string
   name: string
   error: string | undefined

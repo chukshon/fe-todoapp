@@ -1,7 +1,7 @@
 import React from "react"
 import { LoginInputField, Button } from "../../components"
 import { LoginWrapper, Container, FormStyled, ButtonContainer } from "./style"
-import useLogin from "./useLogin"
+import useLogin from "./hooks/useLogin"
 
 const Login = () => {
   const { LoginFormik } = useLogin()
