@@ -1,7 +1,8 @@
-import React from "react";
+import React from "react"
+import { Wrapper } from "./style"
 
 const List = () => {
-  return <div>List</div>;
-};
+  return <Wrapper>List</Wrapper>
+}
 
-export default List;
+export default List
