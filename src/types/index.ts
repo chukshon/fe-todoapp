@@ -13,3 +13,11 @@ export type TodoT = {
   name: string
   isEditing: boolean
 }
+
+export type AuthInitialStateT = {
+  isLoading: boolean
+  isSuccess: boolean
+  isError: boolean
+  message: string
+  user: string | null
+}
