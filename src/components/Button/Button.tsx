@@ -2,7 +2,7 @@ import React from "react"
 import { ButtonStyled } from "./style"
 
 export type Props = {
-  disabled: boolean
+  disabled?: boolean
   buttonText: string
 }
 
