@@ -3,7 +3,13 @@ import { TodoT } from "../../../types/index"
 import { v4 as uuidv4 } from "uuid"
 
 function useList() {
-  const [todos, setTodos] = React.useState<TodoT[]>([])
+  let localStorageTodos = JSON.parse(localStorage.getItem("todo")!)
+  const [todos, setTodos] = React.useState<TodoT[]>(
+    localStorageTodos ? localStorageTodos : []
+  )
+  const [filteredTodos, setFilteredTodos] = React.useState<TodoT[]>(
+    localStorageTodos ? localStorageTodos : []
+  )
   const [searchValue, setSearchValue] = React.useState("")
   const [isNewTodoActive, setIsNewTodoActive] = React.useState(false)
   const [newTodoValue, setNewTodoValue] = React.useState("")
@@ -13,14 +19,19 @@ function useList() {
     setNewTodoValue(value)
   }
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    const tempTodo = [...todos].filter((todo) => {
-      if (todo.name.toLowerCase() === value.toLowerCase()) {
-        todo.isEditing = true
-      }
-      return todo
-    })
+    setSearchValue(value)
+  }
+
+  const handleSearch = () => {
+    let tempTodo = [...filteredTodos]
+    if (searchValue) {
+      tempTodo = tempTodo.filter((todo) => {
+        return todo.name.toLowerCase().startsWith(searchValue.toLowerCase())
+      })
+    }
+
     setTodos(tempTodo)
   }
 
@@ -34,7 +45,11 @@ function useList() {
       name: newTodoValue,
       isEditing: false,
     }
-    setTodos([...todos, newTodo])
+    const tempTodos = [...todos, newTodo]
+    setTodos(tempTodos)
+    localStorage.setItem("todo", JSON.stringify(tempTodos))
+
+    setFilteredTodos([...todos, newTodo])
     setIsNewTodoActive(false)
     setNewTodoValue("")
   }
@@ -46,7 +61,9 @@ function useList() {
       }
       return todo
     })
+    localStorage.setItem("todo", JSON.stringify(tempTodo))
     setTodos(tempTodo)
+    setFilteredTodos(tempTodo)
   }
 
   const handleSaveEditedTodo = (id: string, value: string) => {
@@ -58,6 +75,8 @@ function useList() {
       return todo
     })
     setTodos(tempTodo)
+    setFilteredTodos(tempTodo)
+    localStorage.setItem("todo", JSON.stringify(tempTodo))
   }
 
   const handleDeleteTodo = (id: string) => {
@@ -65,7 +84,13 @@ function useList() {
       return todo.id !== id
     })
     setTodos(tempTodo)
+    setFilteredTodos(tempTodo)
   }
+
+  React.useEffect(() => {
+    handleSearch()
+  }, [searchValue])
+
   return {
     todos,
     isNewTodoActive,
@@ -74,10 +99,10 @@ function useList() {
     handleEditTodo,
     handleDeleteTodo,
     searchValue,
-    handleSearch,
     handleChangeNewTodo,
     newTodoValue,
     handleSaveEditedTodo,
+    handlChangeSearch,
   }
 }
 

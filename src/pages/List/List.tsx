@@ -12,7 +12,7 @@ const List = () => {
     handleEditTodo,
     handleDeleteTodo,
     searchValue,
-    handleSearch,
+    handlChangeSearch,
     newTodoValue,
     handleChangeNewTodo,
     handleSaveEditedTodo,
@@ -28,7 +28,8 @@ const List = () => {
               name="search"
               type="text"
               placeholder="Search"
-              value="Search"
+              handleChange={handlChangeSearch}
+              value={searchValue}
             />
           </div>
           <div className="button_container" onClick={handleOpenNewTodo}>
