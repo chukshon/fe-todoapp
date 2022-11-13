@@ -2,13 +2,15 @@ import React from "react"
 import { LoginInputField, Button } from "../../components"
 import { LoginWrapper, Container, FormStyled, ButtonContainer } from "./style"
 import useLogin from "./hooks/useLogin"
-
+import rapptr_logo_black from "../../Assets/rapptr_logo_black.png"
 const Login = () => {
   const { LoginFormik, message, isLoading } = useLogin()
   return (
     <LoginWrapper>
+      <img src={rapptr_logo_black} alt="" />
       <Container>
         <h1>Rapptr Labs</h1>
+
         <FormStyled onSubmit={LoginFormik.handleSubmit}>
           <LoginInputField
             name="email"

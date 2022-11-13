@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
   h1 {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 70px;
   }
 
   .header {

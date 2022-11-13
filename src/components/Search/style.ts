@@ -24,10 +24,10 @@ export const InputContainer = styled.div`
       }
     }
     &:focus {
-      border-color: #721ce3;
+      border-color: #3ec6f3;
     }
     &:hover {
-      border-color: #8e49e8;
+      border-color: #3ec6f3;
     }
   }
 `
