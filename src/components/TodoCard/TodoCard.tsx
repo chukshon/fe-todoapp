@@ -11,9 +11,9 @@ export type Props = {
   handleSaveNewTodo?: () => void
   todoValue?: string
   isEditing?: boolean
-  handleEditTodo: (id: string | undefined) => void
-  handleSaveEditedTodo: (id: string, value: string) => void
-  handleDeleteTodo: (id: string) => void
+  handleEditTodo?: (id: string | undefined) => void
+  handleSaveEditedTodo?: (id: string, value: string) => void
+  handleDeleteTodo?: (id: string) => void
 }
 const TodoCard = ({
   isNewTodoActive,
@@ -64,10 +64,13 @@ const TodoCard = ({
           />
           {!isEditing && (
             <div className="action_btns">
-              <span className="icon" onClick={() => handleDeleteTodo(todoId!)}>
+              <span
+                className="icon"
+                onClick={() => handleDeleteTodo?.(todoId!)}
+              >
                 {<MdDelete size={30} />}
               </span>
-              <span className="icon" onClick={() => handleEditTodo(todoId)}>
+              <span className="icon" onClick={() => handleEditTodo?.(todoId)}>
                 {<GrEdit size={30} />}
               </span>
             </div>
@@ -75,7 +78,7 @@ const TodoCard = ({
           {isEditing && (
             <button
               className="save_btn"
-              onClick={() => handleSaveEditedTodo(todoId!, tempTodoValue!)}
+              onClick={() => handleSaveEditedTodo?.(todoId!, tempTodoValue!)}
               disabled={!todoValue || todoValue.length > 25}
             >
               Save

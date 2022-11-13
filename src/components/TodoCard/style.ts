@@ -8,7 +8,6 @@ export const Wrapper = styled.li`
   padding: 10px 15px;
   cursor: default;
   overflow: hidden;
-  word-wrap: break-word;
   display: flex;
   justify-content: space-between;
   align-items: center;

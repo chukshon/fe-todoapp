@@ -52,6 +52,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   const logoutUser = () => {
+    dispatch({ type: LOGIN_USER_LOADING })
     localStorage.removeItem("user")
   }
 

@@ -43,9 +43,6 @@ const List = () => {
               newTodoValue={newTodoValue}
               handleChangeNewTodo={handleChangeNewTodo}
               handleSaveNewTodo={handleSaveNewTodo}
-              handleEditTodo={handleEditTodo}
-              handleSaveEditedTodo={handleSaveEditedTodo}
-              handleDeleteTodo={handleDeleteTodo}
             />
           )}
           {todos.map((todo) => {

@@ -10,6 +10,10 @@
 :root {
   --white: #FFFFFF;
   --purple: #8E49E8;
+  --black: #FFFFFF;
+  --light-blue: #8E49E8;
+  --dark-blue: #8E49E8;
+  --default-blue: #FFFFFF;
 }
 
 /*-----------------------------------*\

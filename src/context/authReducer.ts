@@ -1,4 +1,4 @@
-import { AuthInitialStateT } from "../types/index"
+import { AuthInitialStateT, ActionsT } from "../types/index"
 import {
   LOGIN_USER_ERROR,
   LOGIN_USER_SUCCESS,
@@ -7,14 +7,7 @@ import {
   CLEAR_ERROR_ALERT,
 } from "./actions"
 
-type ActionType =
-  | { type: typeof LOGIN_USER_ERROR; payload: string }
-  | { type: typeof LOGIN_USER_SUCCESS; payload: string }
-  | { type: typeof LOGIN_USER_LOADING }
-  | { type: typeof LOGOUT_USER }
-  | { type: typeof CLEAR_ERROR_ALERT }
-
-const authReducer = (state: AuthInitialStateT, action: ActionType) => {
+const authReducer = (state: AuthInitialStateT, action: ActionsT) => {
   if (action.type === LOGIN_USER_LOADING) {
     return {
       ...state,

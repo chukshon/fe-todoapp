@@ -4,6 +4,7 @@ import { ButtonStyled } from "./style"
 export type Props = {
   disabled?: boolean
   buttonText: string
+  loading?: boolean
 }
 
 const Button = ({ disabled, buttonText }: Props) => {
