@@ -38,8 +38,8 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         "/Tests/scripts/user-login.php",
         formData
       )
-      dispatch({ type: LOGIN_USER_SUCCESS, payload: data })
-      localStorage.setItem("user", JSON.stringify(data))
+      dispatch({ type: LOGIN_USER_SUCCESS, payload: data.user_token })
+      localStorage.setItem("user", JSON.stringify(data.user_token))
       return true
     } catch (err: any) {
       let message =

@@ -8,7 +8,8 @@ export const LoginWrapper = styled.div`
   width: 100%;
   padding: 0px 20px;
   img {
-    margin-top: -150px;
+    position: fixed;
+    top: 20px;
     width: 380px;
     height: 50px;
   }

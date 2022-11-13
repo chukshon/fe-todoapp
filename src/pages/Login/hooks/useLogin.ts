@@ -2,8 +2,10 @@ import { useFormik } from "formik"
 import { LoginSchema } from "../../../schema"
 import { LoginT, FormikActionsT } from "../../../types"
 import { useAuthContext } from "../../../context/authContext"
+import { useNavigate } from "react-router-dom"
 
 function useLogin() {
+  const navigate = useNavigate()
   const { loginUser, message, showErrorAlert, isLoading } = useAuthContext()
   const LoginInitialState = {
     email: "",
@@ -11,8 +13,12 @@ function useLogin() {
   }
 
   const handleSubmit = async (vals: LoginT, actions: FormikActionsT) => {
-    const response = await loginUser(vals)
+    const formData = new FormData()
+    formData.append("email", vals.email)
+    formData.append("password", vals.password)
+    const response = await loginUser(formData)
     if (response) {
+      navigate("/")
       actions.resetForm()
     }
   }
