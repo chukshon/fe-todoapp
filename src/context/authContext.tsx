@@ -25,6 +25,7 @@ const initialState: AuthInitialStateT = {
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(authReducer, initialState)
+
   const clearErrorAlert = () => {
     setTimeout(() => {
       dispatch({ type: CLEAR_ERROR_ALERT })
@@ -33,6 +34,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const loginUser = async (formData: LoginT) => {
     dispatch({ type: LOGIN_USER_LOADING })
+
     try {
       const { data } = await axios.post(
         "/Tests/scripts/user-login.php",

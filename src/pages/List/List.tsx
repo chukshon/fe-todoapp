@@ -24,7 +24,7 @@ const List = () => {
   return (
     <Wrapper>
       <header className="header">
-        <img src={rapptr_logo} alt="" />
+        <img src={rapptr_logo} alt="Rapptr Labs" />
         <div className="logout__button__container">
           <Button buttonText="Logout" onClick={logoutUser} />
         </div>

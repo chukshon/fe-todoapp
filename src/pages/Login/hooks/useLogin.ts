@@ -7,7 +7,7 @@ import React from "react"
 
 function useLogin() {
   const navigate = useNavigate()
-  const { loginUser, message, isLoading, user } = useAuthContext()
+  const { loginUser, user } = useAuthContext()
   const LoginInitialState = {
     email: "",
     password: "",
@@ -38,8 +38,6 @@ function useLogin() {
 
   return {
     LoginFormik,
-    message,
-    isLoading,
   }
 }
 

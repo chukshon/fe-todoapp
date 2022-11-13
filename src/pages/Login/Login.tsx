@@ -3,11 +3,14 @@ import { LoginInputField, Button } from "../../components"
 import { LoginWrapper, Container, FormStyled, ButtonContainer } from "./style"
 import useLogin from "./hooks/useLogin"
 import rapptr_logo_black from "../../Assets/rapptr_logo_black.png"
+import { useAuthContext } from "../../context/authContext"
+
 const Login = () => {
-  const { LoginFormik, message, isLoading } = useLogin()
+  const { message, showErrorAlert, isLoading } = useAuthContext()
+  const { LoginFormik } = useLogin()
   return (
     <LoginWrapper>
-      <img src={rapptr_logo_black} alt="" />
+      <img src={rapptr_logo_black} alt="Rapptr Labs" />
       <Container>
         <h1>Rapptr Labs</h1>
         <FormStyled onSubmit={LoginFormik.handleSubmit}>
@@ -41,7 +44,7 @@ const Login = () => {
             />
           </ButtonContainer>
         </FormStyled>
-        <p className="error__message">{message}</p>
+        {showErrorAlert && <p className="error__message">{message}</p>}
       </Container>
     </LoginWrapper>
   )
