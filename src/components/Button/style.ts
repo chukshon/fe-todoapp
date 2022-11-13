@@ -11,6 +11,9 @@ export const ButtonStyled = styled.button`
   cursor: pointer;
   border-radius: 3px;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
     background: #0dafe0;
   }

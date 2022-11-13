@@ -12,6 +12,7 @@ const authReducer = (state: AuthInitialStateT, action: ActionsT) => {
     return {
       ...state,
       isLoading: true,
+      message: "",
     }
   }
   if (action.type === LOGIN_USER_SUCCESS) {
@@ -51,7 +52,6 @@ const authReducer = (state: AuthInitialStateT, action: ActionsT) => {
       message: "",
     }
   }
-
   throw new Error(`No Matching "" - action type`)
 }
 

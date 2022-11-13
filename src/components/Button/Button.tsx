@@ -1,6 +1,6 @@
 import React from "react"
 import { ButtonStyled } from "./style"
-
+import { Loader } from "../index"
 export type Props = {
   disabled?: boolean
   buttonText: string
@@ -8,10 +8,10 @@ export type Props = {
   onClick?: () => void
 }
 
-const Button = ({ disabled, buttonText, onClick }: Props) => {
+const Button = ({ disabled, buttonText, onClick, loading }: Props) => {
   return (
     <ButtonStyled type="submit" disabled={disabled} onClick={onClick}>
-      {buttonText}
+      {loading ? <Loader /> : buttonText}
     </ButtonStyled>
   )
 }

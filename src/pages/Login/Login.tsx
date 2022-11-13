@@ -38,6 +38,7 @@ const Login = () => {
             <Button
               disabled={!LoginFormik.isValid || isLoading}
               buttonText="Login"
+              loading={isLoading}
             />
           </ButtonContainer>
         </FormStyled>
