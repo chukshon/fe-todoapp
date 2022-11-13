@@ -1,5 +1,5 @@
 import React from "react"
-import { Wrapper } from "./style"
+import { TodoWrapper } from "./style"
 import { MdDelete } from "react-icons/md"
 import { GrEdit } from "react-icons/gr"
 
@@ -35,7 +35,7 @@ const TodoCard = ({
   return (
     <>
       {isNewTodoActive ? (
-        <Wrapper>
+        <TodoWrapper>
           <input
             type="text"
             name="todo"
@@ -51,9 +51,9 @@ const TodoCard = ({
           >
             Save
           </button>
-        </Wrapper>
+        </TodoWrapper>
       ) : (
-        <Wrapper>
+        <TodoWrapper>
           <input
             type="text"
             name="todo"
@@ -79,12 +79,12 @@ const TodoCard = ({
             <button
               className="save_btn"
               onClick={() => handleSaveEditedTodo?.(todoId!, tempTodoValue!)}
-              disabled={!todoValue || todoValue.length > 25}
+              disabled={!tempTodoValue || tempTodoValue.length > 25}
             >
               Save
             </button>
           )}
-        </Wrapper>
+        </TodoWrapper>
       )}
     </>
   )

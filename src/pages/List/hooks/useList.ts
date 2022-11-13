@@ -13,7 +13,6 @@ function useList() {
   const [searchValue, setSearchValue] = React.useState("")
   const [isNewTodoActive, setIsNewTodoActive] = React.useState(false)
   const [newTodoValue, setNewTodoValue] = React.useState("")
-
   const Save = (tempTodo: any) => {
     setTodos(tempTodo)
     setFilteredTodos(tempTodo)
@@ -86,6 +85,7 @@ function useList() {
 
   React.useEffect(() => {
     handleSearch()
+    // eslint-disable-next-line
   }, [searchValue])
 
   return {

@@ -10,7 +10,6 @@ const Login = () => {
       <img src={rapptr_logo_black} alt="" />
       <Container>
         <h1>Rapptr Labs</h1>
-
         <FormStyled onSubmit={LoginFormik.handleSubmit}>
           <LoginInputField
             name="email"

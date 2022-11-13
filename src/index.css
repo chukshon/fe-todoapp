@@ -9,11 +9,11 @@
 
 :root {
   --white: #FFFFFF;
-  --purple: #8E49E8;
-  --black: #FFFFFF;
-  --light-blue: #8E49E8;
-  --dark-blue: #8E49E8;
+  --light-blue: #3ec6f3;
+  --dark-blue: #0dafe0;
   --default-blue: #FFFFFF;
+  --black: #000000;
+  --border-color: #ccc
 }
 
 /*-----------------------------------*\

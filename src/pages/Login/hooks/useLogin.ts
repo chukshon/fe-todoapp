@@ -7,8 +7,7 @@ import React from "react"
 
 function useLogin() {
   const navigate = useNavigate()
-  const { loginUser, message, showErrorAlert, isLoading, user } =
-    useAuthContext()
+  const { loginUser, message, isLoading, user } = useAuthContext()
   const LoginInitialState = {
     email: "",
     password: "",

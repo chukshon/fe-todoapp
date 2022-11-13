@@ -22,7 +22,8 @@ export const InputContainer = styled.div`
     height: 50px;
     outline: none;
     border-radius: 3px;
-    border: 2px solid #ccc;
+    border: 2px solid;
+    border-color: var(--border-color);
     transition: all 0.3s ease;
     padding-left: 40px;
     &.error {
@@ -35,10 +36,10 @@ export const InputContainer = styled.div`
       }
     }
     &:focus {
-      border-color: #3ec6f3;
+      border-color: var(--light-blue);
     }
     &:hover {
-      border-color: #3ec6f3;
+      border-color: var(--light-blue);
     }
   }
 `

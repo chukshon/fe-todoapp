@@ -4,12 +4,10 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   background: linear-gradient(to bottom, #68eacc 0%, #497be8 100%);
-
   h1 {
     text-align: center;
     margin-top: 70px;
   }
-
   .header {
     display: flex;
     justify-content: space-between;
@@ -31,8 +29,11 @@ export const TodoContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 720px) {
+    margin: 0px 20px;
+  }
   .todo_wrapper {
-    background: #fff;
+    background: var(--white);
     max-width: 600px;
     width: 100%;
     margin: 50px auto;

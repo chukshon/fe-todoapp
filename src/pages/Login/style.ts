@@ -16,10 +16,11 @@ export const LoginWrapper = styled.div`
 `
 
 export const Container = styled.div`
-  margin: 80px auto;
+  margin: 50px auto;
   max-width: 400px;
   width: 100%;
   h1 {
+    margin-top: 50px;
     text-align: center;
     letter-spacing: 3px;
   }

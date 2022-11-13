@@ -4,10 +4,10 @@ export const ButtonStyled = styled.button`
   width: 100%;
   height: 100%;
   border: none;
-  color: #fff;
+  color: var(--white);
   font-size: 18px;
   outline: none;
-  background: #3ec6f3;
+  background: var(--light-blue);
   cursor: pointer;
   border-radius: 3px;
   transition: all 0.3s ease;
@@ -15,7 +15,7 @@ export const ButtonStyled = styled.button`
   justify-content: center;
   align-items: center;
   &:hover {
-    background: #0dafe0;
+    background: var(--dark-blue);
   }
   &:disabled {
     opacity: 0.5;
