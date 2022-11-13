@@ -25,7 +25,6 @@ const initialState: AuthInitialStateT = {
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(authReducer, initialState)
-
   const clearErrorAlert = () => {
     setTimeout(() => {
       dispatch({ type: CLEAR_ERROR_ALERT })

@@ -41,7 +41,7 @@ const Login = () => {
             />
           </ButtonContainer>
         </FormStyled>
-        <p>{message}</p>
+        <p className="error__message">{message}</p>
       </Container>
     </LoginWrapper>
   )

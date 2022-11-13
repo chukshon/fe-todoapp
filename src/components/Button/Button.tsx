@@ -11,7 +11,7 @@ export type Props = {
 const Button = ({ disabled, buttonText, onClick, loading }: Props) => {
   return (
     <ButtonStyled type="submit" disabled={disabled} onClick={onClick}>
-      {loading ? <Loader /> : buttonText}
+      {loading ? <Loader /> : <p>{buttonText}</p>}
     </ButtonStyled>
   )
 }

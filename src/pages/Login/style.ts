@@ -16,13 +16,18 @@ export const LoginWrapper = styled.div`
 `
 
 export const Container = styled.div`
-  margin: 50px auto;
+  margin: 0px auto;
   max-width: 400px;
   width: 100%;
   h1 {
-    margin-top: 50px;
+    margin-top: -70px;
     text-align: center;
     letter-spacing: 3px;
+  }
+  .error__message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
   }
 `
 

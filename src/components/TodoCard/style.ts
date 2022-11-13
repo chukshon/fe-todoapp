@@ -43,7 +43,7 @@ export const TodoWrapper = styled.li`
     color: var(--white);
     font-size: 18px;
     outline: none;
-    background: black;
+    background: var(--black);
     padding: 5px 20px;
     cursor: pointer;
     border-radius: 3px;
