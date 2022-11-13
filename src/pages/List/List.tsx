@@ -25,15 +25,15 @@ const List = () => {
     <Wrapper>
       <header className="header">
         <img src={rapptr_logo} alt="" />
-        <div className="logout_button_container">
+        <div className="logout__button__container">
           <Button buttonText="Logout" onClick={logoutUser} />
         </div>
       </header>
       <h1>My To-Do List</h1>
       <TodoContainer>
-        <div className="todo_wrapper">
-          <div className="todo_header">
-            <div className="search_container">
+        <div className="todo__wrapper">
+          <div className="todo__header">
+            <div className="search__container">
               <Search
                 name="search"
                 type="text"
@@ -42,11 +42,11 @@ const List = () => {
                 value={searchValue}
               />
             </div>
-            <div className="button_container" onClick={handleOpenNewTodo}>
+            <div className="button__container" onClick={handleOpenNewTodo}>
               <Button buttonText="New" />
             </div>
           </div>
-          <ul className="todo_list">
+          <ul className="todo__list">
             {isNewTodoActive && (
               <TodoCard
                 isNewTodoActive={isNewTodoActive}

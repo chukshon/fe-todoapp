@@ -25,7 +25,7 @@ export const TodoWrapper = styled.li`
       pointer-events: visible;
     }
   }
-  .action_btns {
+  .action__btns {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -37,7 +37,7 @@ export const TodoWrapper = styled.li`
       cursor: pointer;
     }
   }
-  .save_btn {
+  .save__btn {
     text-align: center;
     border: none;
     color: var(--white);

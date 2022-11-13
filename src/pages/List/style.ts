@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
       width: 150px;
       height: 60px;
     }
-    .logout_button_container {
+    .logout__button__container {
       height: 40px;
       width: 80px;
     }
@@ -32,7 +32,7 @@ export const TodoContainer = styled.div`
   @media (max-width: 720px) {
     margin: 0px 20px;
   }
-  .todo_wrapper {
+  .todo__wrapper {
     background: var(--white);
     max-width: 600px;
     width: 100%;
@@ -40,17 +40,17 @@ export const TodoContainer = styled.div`
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-    .todo_header {
+    .todo__header {
       display: flex;
       gap: 0.5rem;
     }
-    .search_container {
+    .search__container {
       width: 80%;
     }
-    .button_container {
+    .button__container {
       width: 20%;
     }
-    .todo_list {
+    .todo__list {
       margin-top: 20px;
     }
   }

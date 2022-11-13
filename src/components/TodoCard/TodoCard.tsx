@@ -45,7 +45,7 @@ const TodoCard = ({
             onChange={handleChangeNewTodo}
           />
           <button
-            className="save_btn"
+            className="save__btn"
             onClick={handleSaveNewTodo}
             disabled={!newTodoValue || newTodoValue.length > 25}
           >
@@ -63,7 +63,7 @@ const TodoCard = ({
             onChange={handleEditChange}
           />
           {!isEditing && (
-            <div className="action_btns">
+            <div className="action__btns">
               <span
                 className="icon"
                 onClick={() => handleDeleteTodo?.(todoId!)}
@@ -77,7 +77,7 @@ const TodoCard = ({
           )}
           {isEditing && (
             <button
-              className="save_btn"
+              className="save__btn"
               onClick={() => handleSaveEditedTodo?.(todoId!, tempTodoValue!)}
               disabled={!tempTodoValue || tempTodoValue.length > 25}
             >
