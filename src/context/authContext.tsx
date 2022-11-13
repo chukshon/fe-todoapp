@@ -7,6 +7,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_LOADING,
   CLEAR_ERROR_ALERT,
+  LOGOUT_USER,
 } from "./actions"
 
 export const AuthContext = React.createContext<any>({})
@@ -52,7 +53,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   const logoutUser = () => {
-    dispatch({ type: LOGIN_USER_LOADING })
+    dispatch({ type: LOGOUT_USER })
     localStorage.removeItem("user")
   }
 

@@ -3,8 +3,10 @@ import { Button, Search, TodoCard } from "../../components"
 import useList from "./hooks/useList"
 import { Wrapper, TodoContainer } from "./style"
 import rapptr_logo from "../../Assets/rapptr_logo.png"
+import { useAuthContext } from "../../context/authContext"
 
 const List = () => {
+  const { logoutUser } = useAuthContext()
   const {
     todos,
     isNewTodoActive,
@@ -24,7 +26,7 @@ const List = () => {
       <header className="header">
         <img src={rapptr_logo} alt="" />
         <div className="logout_button_container">
-          <Button buttonText="Logout" />
+          <Button buttonText="Logout" onClick={logoutUser} />
         </div>
       </header>
       <h1>My To-Do List</h1>

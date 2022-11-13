@@ -36,7 +36,12 @@ const authReducer = (state: AuthInitialStateT, action: ActionsT) => {
   if (action.type === LOGOUT_USER) {
     return {
       ...state,
+      isLoading: false,
+      isSuccess: false,
+      isError: false,
+      message: "",
       user: null,
+      showErrorAlert: false,
     }
   }
   if (action.type === CLEAR_ERROR_ALERT) {
