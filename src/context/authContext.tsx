@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useReducer } from "react"
+import React, { useContext, useReducer } from "react"
 import authReducer from "./authReducer"
 import { AuthInitialStateT, LoginT } from "../types/index"
 import axios from "axios"
@@ -6,7 +6,6 @@ import {
   LOGIN_USER_ERROR,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_LOADING,
-  LOGOUT_USER,
   CLEAR_ERROR_ALERT,
 } from "./actions"
 
@@ -25,6 +24,7 @@ const initialState: AuthInitialStateT = {
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(authReducer, initialState)
+
   const clearErrorAlert = () => {
     setTimeout(() => {
       dispatch({ type: CLEAR_ERROR_ALERT })
@@ -42,9 +42,9 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem("user", JSON.stringify(data))
       return true
     } catch (err: any) {
-      console.log(err)
-      let message = err.response.data.message || "Something went wrong"
-
+      let message =
+        err.response.data.message ||
+        "The server could not be reached. Please try again later"
       dispatch({ type: LOGIN_USER_ERROR, payload: message })
       clearErrorAlert()
       return false

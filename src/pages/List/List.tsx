@@ -1,7 +1,8 @@
 import React from "react"
 import { Button, Search, TodoCard } from "../../components"
 import useList from "./hooks/useList"
-import { Wrapper, Container } from "./style"
+import { Wrapper, TodoContainer } from "./style"
+import rapptr_logo from "../../Assets/rapptr_logo.png"
 
 const List = () => {
   const {
@@ -20,46 +21,54 @@ const List = () => {
 
   return (
     <Wrapper>
-      <h1>My Todo List</h1>
-      <Container>
-        <div className="todo_header">
-          <div className="search_container">
-            <Search
-              name="search"
-              type="text"
-              placeholder="Search"
-              handleChange={handlChangeSearch}
-              value={searchValue}
-            />
-          </div>
-          <div className="button_container" onClick={handleOpenNewTodo}>
-            <Button buttonText="New" />
-          </div>
+      <header className="header">
+        <img src={rapptr_logo} alt="" />
+        <div className="logout_button_container">
+          <Button buttonText="Logout" />
         </div>
-        <ul className="todo_list">
-          {isNewTodoActive && (
-            <TodoCard
-              isNewTodoActive={isNewTodoActive}
-              newTodoValue={newTodoValue}
-              handleChangeNewTodo={handleChangeNewTodo}
-              handleSaveNewTodo={handleSaveNewTodo}
-            />
-          )}
-          {todos.map((todo) => {
-            return (
-              <TodoCard
-                key={todo.id}
-                todoId={todo.id}
-                todoValue={todo.name}
-                isEditing={todo.isEditing}
-                handleEditTodo={handleEditTodo}
-                handleSaveEditedTodo={handleSaveEditedTodo}
-                handleDeleteTodo={handleDeleteTodo}
+      </header>
+      <h1>My To-Do List</h1>
+      <TodoContainer>
+        <div className="todo_wrapper">
+          <div className="todo_header">
+            <div className="search_container">
+              <Search
+                name="search"
+                type="text"
+                placeholder="Search"
+                handleChange={handlChangeSearch}
+                value={searchValue}
               />
-            )
-          })}
-        </ul>
-      </Container>
+            </div>
+            <div className="button_container" onClick={handleOpenNewTodo}>
+              <Button buttonText="New" />
+            </div>
+          </div>
+          <ul className="todo_list">
+            {isNewTodoActive && (
+              <TodoCard
+                isNewTodoActive={isNewTodoActive}
+                newTodoValue={newTodoValue}
+                handleChangeNewTodo={handleChangeNewTodo}
+                handleSaveNewTodo={handleSaveNewTodo}
+              />
+            )}
+            {todos.map((todo) => {
+              return (
+                <TodoCard
+                  key={todo.id}
+                  todoId={todo.id}
+                  todoValue={todo.name}
+                  isEditing={todo.isEditing}
+                  handleEditTodo={handleEditTodo}
+                  handleSaveEditedTodo={handleSaveEditedTodo}
+                  handleDeleteTodo={handleDeleteTodo}
+                />
+              )
+            })}
+          </ul>
+        </div>
+      </TodoContainer>
     </Wrapper>
   )
 }

@@ -7,12 +7,12 @@ export const ButtonStyled = styled.button`
   color: #fff;
   font-size: 18px;
   outline: none;
-  background: #8e49e8;
+  background: #3ec6f3;
   cursor: pointer;
   border-radius: 3px;
   transition: all 0.3s ease;
   &:hover {
-    background: #721ce3;
+    background: #0dafe0;
   }
   &:disabled {
     opacity: 0.5;
