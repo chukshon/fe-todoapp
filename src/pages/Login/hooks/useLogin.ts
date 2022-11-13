@@ -3,10 +3,12 @@ import { LoginSchema } from "../../../schema"
 import { LoginT, FormikActionsT } from "../../../types"
 import { useAuthContext } from "../../../context/authContext"
 import { useNavigate } from "react-router-dom"
+import React from "react"
 
 function useLogin() {
   const navigate = useNavigate()
-  const { loginUser, message, showErrorAlert, isLoading } = useAuthContext()
+  const { loginUser, message, showErrorAlert, isLoading, user } =
+    useAuthContext()
   const LoginInitialState = {
     email: "",
     password: "",
@@ -28,6 +30,13 @@ function useLogin() {
     onSubmit: handleSubmit,
     validateOnBlur: true,
   })
+
+  React.useEffect(() => {
+    if (user) {
+      navigate("/")
+    }
+  }, [user, navigate])
+
   return {
     LoginFormik,
     message,
