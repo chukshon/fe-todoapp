@@ -1,12 +1,24 @@
-# Getting Started with Create React App
+# Todo App
+This is a simple todo app that allows a user to create, edit or delete a todo. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Table of Contents
+
+- [Installation](#installation)
+- [Project Description](#project-description)
+- [Technology and libraries used](#technology-and-libraries-used)
+- [Usage](#how-to-use-the-app)
+
+
+## Installation
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn or npm install`
+
+This installs all the necessary dependencies and packages
+
+### `yarn or npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
+### `yarn or npm  build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,20 +34,41 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Project Description
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The todo application has the following functionalites which are:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Logging in a user to the application
+- Logging out a user from the application
+- Create, edit, delete and also search todos.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technology and libraries used
 
-## Learn More
+- React
+- Typescript
+- React context
+- UUID
+- React router dom
+- Axios
+- Styled Components
+- Formik and yup
+- React icons
+- React Context
+ 
+ 
+ ## How to use the App
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app has two pages: login page and the todo List Page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Once the app launches, a login screen will be displayed where you'll need to input an already registered email and password so as to be able to access the todo List page
+![image](https://user-images.githubusercontent.com/49742142/201549856-6f919cbb-a446-4b7d-a214-131f44444976.png)
+
+
+- Once logged in, you'll be redirected to the todo list page, where you can add new todo, edit already existing todo, delete todo. and also search for a todo.
+![image](https://user-images.githubusercontent.com/49742142/201550012-2553c969-239a-4eb4-a8ad-9e02fd53cc15.png)
+
+
+
+
