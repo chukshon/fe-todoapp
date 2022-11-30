@@ -37,7 +37,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     try {
       const { data } = await axios.post(
-        "/Tests/scripts/user-login.php",
+        "https://dev.rapptrlabs.com/Tests/scripts/user-login.php",
         formData
       )
       dispatch({ type: LOGIN_USER_SUCCESS, payload: data.user_token })
