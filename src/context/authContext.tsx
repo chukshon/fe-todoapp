@@ -44,6 +44,8 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem("user", JSON.stringify(data.user_token))
       return true
     } catch (err: any) {
+      console.log(err)
+
       let message =
         err.response.data.message ||
         "The server could not be reached. Please try again later"
